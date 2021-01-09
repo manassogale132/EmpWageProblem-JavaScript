@@ -66,3 +66,7 @@ while(workHour <= workingHoursPerMonth && workDay <= workingDaysPerMonth) {   //
   }
   workDay++;
 }
+
+var total = sum;                                             //Storing the total wage.
+
+console.log("Total Employee Wage is : " + total + "$\n");
