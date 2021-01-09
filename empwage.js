@@ -9,16 +9,26 @@ var fullWage = fullDayHour * wagePerHour;                      //Calculate daily
 var partTimeWage = partTimeHour * wagePerHour;                 //Calculate parttime wage added  (partime-wage)
 
 
-console.log("Full Employee Wage is : " + fullWage);
-console.log("PartTime Employee Wage is : " + partTimeWage);
-
 var attendance = Math.floor(Math.random() * 3) + 1;                  //Attendance check
 
-if (attendance == 1) {
-    console.log("Employee is Absent");
-  } else if (attendance == 2) {
-    console.log("Employee is Parttime");                            //Parttime employee added
-  } else {
-    console.log("Employee is Present");
-  }
-                
+
+switch(attendance) {                                                  //Solved using switch case statement
+
+    case 1:
+        console.log("Employee is Absent\n");
+        break;
+
+    case 2:
+        console.log("Employee is Parttime");
+        console.log("PartTime Employee Wage is : " + partTimeWage + "\n");
+        break;
+    
+    case 3:
+        console.log("Employee is Present");
+        console.log("Full Employee Wage is : " + fullWage + "\n");
+        break;
+
+    default:
+        console.log("No such Case");
+        break;
+}
