@@ -5,30 +5,36 @@ console.log("\n----------------------------------------------------------\n"+
 const fullDayHour = 8;     
 const partTimeHour = 4;                                            
 const wagePerHour = 20;
-var fullWage = fullDayHour * wagePerHour;                      //Calculate daily employee wage  (full-wage)
-var partTimeWage = partTimeHour * wagePerHour;                 //Calculate parttime wage added  (partime-wage)
+const workingDaysPerMonth = 20;                               
+var fullWage = fullDayHour * wagePerHour;                      //Calculate daily employee wage  (fullWage)
+var partTimeWage = partTimeHour * wagePerHour;                 //Calculate parttime wage added  (partTimeWage)
 
 
-var attendance = Math.floor(Math.random() * 3) + 1;                  //Attendance check
+for (var i = 1; i <= workingDaysPerMonth; i++) {               //Calculating Wages for a Month (workingDaysPerMonth)
 
+  var attendance = Math.floor(Math.random() * 3) + 1;       //Attendance check
 
-switch(attendance) {                                                  //Solved using switch case statement
-
+  switch (attendance) {                                                       //Solved using switch case statement 
+    
     case 1:
-        console.log("Employee is Absent\n");
-        break;
+      console.log("Day no : " + i);
+      console.log("Employee is Absent\n");
+      break;
 
     case 2:
-        console.log("Employee is Parttime");
-        console.log("PartTime Employee Wage is : " + partTimeWage + "\n");
-        break;
-    
+      console.log("Day no : " + i);
+      console.log("Employee is Parttime");
+      console.log("PartTime Employee Wage is : " + partTimeWage + "\n");
+      break;
+
     case 3:
-        console.log("Employee is Present");
-        console.log("Full Employee Wage is : " + fullWage + "\n");
-        break;
+      console.log("Day no : " + i);
+      console.log("Employee is Present");
+      console.log("Full Employee Wage is : " + fullWage + "\n");
+      break;
 
     default:
-        console.log("No such Case");
-        break;
+      console.log("No such Case");
+      break;
+  }
 }
