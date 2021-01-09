@@ -15,6 +15,15 @@ var sum = 0;
 var workHour = 0;
 var workDay = 1;
 
+function workHourFunctionForPartTime() {                               //Function 1 to get work hours of parttime.
+  workHour = workHour + partTimeHour;
+}
+
+function workHourFunctionForFullTime() {                               //Function 2 to get work hours of fulltime.
+  workHour = workHour + fullDayHour;
+}
+
+
 while(workHour <= workingHoursPerMonth && workDay <= workingDaysPerMonth) {   //Two Condition To be Checked  
 
   var attendance = Math.floor(Math.random() * 3) + 1;       //Attendance check
@@ -24,33 +33,35 @@ while(workHour <= workingHoursPerMonth && workDay <= workingDaysPerMonth) {   //
     case 1 :
       console.log("Day no : " + workDay + "\n" +
                   "Employee is Absent.\n"+
-                  ".....");
+                  ".....\n");
       break;
 
     case 2 :
       sum = sum + partTimeWage;
-      workHour = workHour + partTimeHour;
+      //workHour = workHour + partTimeHour;
+      workHourFunctionForPartTime();                                          //Calling Function 1
       console.log("Day no : " + workDay + "\n" +
                   "Hour no : " + workHour + "\n" +
                   "Employee is Parttime." + "\n" +
                   "PartTime Employee Wage is : " + partTimeWage + "\n" +
                   "Total Wage is : " + sum + "\n" +
-                  ".....");
+                  ".....\n");
       break;
 
     case 3 :
       sum = sum + fullWage;
-      workHour = workHour + fullDayHour;
+      //workHour = workHour + fullDayHour;
+      workHourFunctionForFullTime();                                         //Calling Function 2
       console.log("Day no : " + workDay + "\n" +
                   "Hour no : " + workHour + "\n" +
                   "Employee is Present." + "\n" +
                   "Full Employee Wage is : " + fullWage + "\n" +
                   "Total Wage is : " + sum + "\n" +
-                  ".....")
+                  ".....\n")
       break;
 
     default:
-      console.log("No such Case");
+      console.log("No such Case.\n");
       break;
   }
   workDay++;
