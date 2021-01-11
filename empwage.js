@@ -15,13 +15,9 @@ var sum = 0;
 var workHour = 0;
 var workDay = 1;
 
-function workHourFunctionForPartTime() {                               //Function 1 to get work hours of parttime.
-  workHour = workHour + partTimeHour;
-}
+const workHourFunctionForPartTime = () => workHour = workHour + partTimeHour;           //Arrow-Function 1 to get work hours of parttime.
 
-function workHourFunctionForFullTime() {                               //Function 2 to get work hours of fulltime.
-  workHour = workHour + fullDayHour;
-}
+const workHourFunctionForFullTime = () => workHour = workHour + fullDayHour;            //Arrow-Function 2 to get work hours of fulltime.
 
 
 while(workHour <= workingHoursPerMonth && workDay <= workingDaysPerMonth) {   //Two Condition To be Checked  
